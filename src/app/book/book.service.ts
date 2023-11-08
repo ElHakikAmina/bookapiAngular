@@ -21,4 +21,11 @@ export class BookService{
     {
         return Observable.throw(error);
     }
+
+    addBook(book:Book){
+        let body = JSON.stringify(book);
+        let headers = new Headers({'Content-Tyoe': 'application/json'});
+        let options = new RequestOptions({headers: headers});
+        this._httpService.post("",body,options)
+    }
 }
